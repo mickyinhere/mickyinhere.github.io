@@ -14,7 +14,7 @@
 // MQTT client details:
 let broker = {
     hostname: 'broker.emqx.io',
-    port: 8083
+    port: 8084
 };
 // MQTT client:
 let client;
