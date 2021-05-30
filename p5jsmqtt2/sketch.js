@@ -20,9 +20,9 @@ let broker = {
 let client;
 // client credentials:
 let creds = {
-    clientID: 'p5Client',
-    userName: 'public',
-    password: 'public'
+    clientID: '',
+    userName: '',
+    password: ''
 }
 // topic to subscribe to when you connect:
 let topic = 'notes';
