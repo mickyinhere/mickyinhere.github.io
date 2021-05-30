@@ -20,12 +20,12 @@ let broker = {
 let client;
 // client credentials:
 let creds = {
-    clientID: 'test00',
-    userName: 'test00',
-    password: 'test00'
+    clientID: 'p5Client',
+    userName: 'public',
+    password: 'public'
 }
 // topic to subscribe to when you connect:
-let topic = 'notes';
+let topic = 'mickyinhere';
 
 // a pushbutton to send messages
 let sendButton;
