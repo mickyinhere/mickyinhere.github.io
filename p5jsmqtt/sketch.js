@@ -25,7 +25,7 @@ let creds = {
     password: 'public'
 }
 // topic to subscribe to when you connect:
-let topic = 'notes';
+let topic = 'notes/test';
 
 // a pushbutton to send messages
 let sendButton;
