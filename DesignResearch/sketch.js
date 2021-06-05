@@ -2,7 +2,11 @@ const objects = [];
 let eyeZ;
 
 function setup() {
-  createCanvas(710, 400, WEBGL);
+
+}
+
+function draw() {
+    createCanvas(windowWidth/2, windowHeight/2, WEBGL);
 
   eyeZ = height / 2 / tan((30 * PI) / 180); // The default distance the camera is away from the origin.
 
@@ -14,9 +18,6 @@ function setup() {
 
   noStroke();
   ambientMaterial(250);
-}
-
-function draw() {
   background(0);
 
   // Lights
