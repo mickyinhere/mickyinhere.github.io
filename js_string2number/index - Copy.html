@@ -5,24 +5,15 @@
 <p>Click the button to display the array values after the split.</p>
 <p>The original string is "50.3 22.2 678"</p>
 <button onclick="myFunction()">Try it :  Number(res[0])+Number(res[1])</button>
-<button onclick="myFunction2()">join string</button>
+
 <p id="demo"></p>
 
-<p id="demo2"></p>
 <script>
 function myFunction() {
   var str = "50.3 22.2 678";
   var res = str.split(" ");
   document.getElementById("demo").innerHTML = Number(res[0])+Number(res[1]);
 }
-
-function myFunction2() {
-  var str = "50.3 22.2 678";
-  var res = str.split(" ");
-  var join_res = res.join("@@");
-  document.getElementById("demo2").innerHTML =  join_res ;
-}
-
 </script>
 
 </body>
