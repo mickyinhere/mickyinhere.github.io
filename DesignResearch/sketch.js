@@ -6,7 +6,8 @@ function setup() {
 }
 
 function draw() {
-    createCanvas(windowWidth/2, windowHeight/2, WEBGL);
+   
+  createCanvas(windowWidth/2, windowHeight/2, WEBGL);
 
   eyeZ = height / 2 / tan((30 * PI) / 180); // The default distance the camera is away from the origin.
 
