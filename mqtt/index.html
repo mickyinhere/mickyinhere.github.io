@@ -124,11 +124,11 @@ var mystring="hihi";
 <button type="button" onclick="smmc( mystring) ">test</button>
 
 <h4>slider:0</h4>
-<input type="range" min="1" max="100" value="50" id="id0">
+<input type="range" min="0" max="255" value="127" id="id0">
 <h4>slider:1</h4>
-<input type="range" min="1" max="100" value="50" id="id1">
+<input type="range" min="0" max="255" value="127" id="id1">
 <h4>slider:2</h4>
-<input type="range" min="1" max="100" value="50" id="id2">
+<input type="range" min="0" max="255" value="127" id="id2">
 <p></p>
 <span>Value:</span> <span id="c_data" style="font-weight:bold;color:red"></span>
 
@@ -138,8 +138,13 @@ var slider_0 = document.getElementById("id0");
 var slider_1 = document.getElementById("id1");
 var slider_2 = document.getElementById("id2");
 var d0,d1,d2 = 0;
+d0=127;
+d1=127;
+d2=127;
+
 
 var x = document.getElementById("c_data");
+x.innerHTML = String(d0)+";"+String(d1)+";"+String(d2);
 var ts = String(d0)+";"+String(d1)+";"+String(d2);
 
 slider_0.oninput = function() {
