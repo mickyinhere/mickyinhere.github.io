@@ -1,0 +1,179 @@
+<html>
+
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+    </head>
+
+
+    <body>
+<p>mqtt test</p>
+<script>
+console.log("hello world~");
+
+// MQTT client details:
+
+// MQTT client details:
+let localDiv;
+let intensity = 255;
+let broker = {
+    hostname: 'public.cloud.shiftr.io',
+    port: 443
+};
+// MQTT client:
+let client;
+// client credentials:
+let creds = {
+    clientID: 'p5Client',
+    userName: 'public',
+    password: 'public'
+}
+// topic to subscribe to when you connect:
+let topic = 'notes/test';
+
+client = new Paho.MQTT.Client(broker.hostname, Number(broker.port), creds.clientID);
+client.onConnectionLost = onConnectionLost;
+client.onMessageArrived = onMessageArrived;
+function onConnect() {
+    console.log('client is connected');
+    client.subscribe(topic);
+}
+
+// called when the client loses its connection
+
+function onConnectionLost(response) {
+    if (response.errorCode !== 0) {
+        console.log('onConnectionLost:' + response.errorMessage);
+    }
+}
+
+function onMessageArrived(message) {
+    console.log('I got a message:' + message.payloadString);
+    let  incomingNumber = parseInt(message.payloadString);
+    if (incomingNumber > 0) {
+        intensity = 255;
+    }
+}
+function sendMqttMessage() {
+    console.log("using sendmqtt");
+    // if the client is connected to the MQTT broker:
+    if (client.isConnected()) {
+        // make a string with a random number form 0 to 15:
+        let msg = String("10"+"7");
+        // start an MQTT message:
+        message = new Paho.MQTT.Message(msg);
+        // choose the destination topic:
+        message.destinationName = topic;
+        // send it:
+        client.send(message);
+        // print what you sent:
+        //localDiv.html('I sent: ' + message.payloadString);
+        console.log('I sent: ' + message.payloadString);
+    }
+    else{console.log("didn't send");
+    }
+}
+
+function tosend(){
+console.log("run tosend");
+
+    // Create an MQTT client:
+    client = new Paho.MQTT.Client(broker.hostname, Number(broker.port), creds.clientID);
+    // set callback handlers for the client:
+    client.onConnectionLost = onConnectionLost;
+    client.onMessageArrived = onMessageArrived;
+    // connect to the MQTT broker:
+    client.connect(
+        {
+            onSuccess: onConnect,       // callback function for when you connect
+            userName: creds.userName,   // username
+            password: creds.password,   // password
+            useSSL: true                // use SSL
+        }
+    );
+    // create the send button:
+
+sendMqttMessage();
+}
+
+tosend();
+
+function smmc(data) {
+    console.log("using sendmqtt");
+    // if the client is connected to the MQTT broker:
+    if (client.isConnected()) {
+        // make a string with a random number form 0 to 15:
+        let msg = data;
+        // start an MQTT message:
+        message = new Paho.MQTT.Message(msg);
+        // choose the destination topic:
+        message.destinationName = topic;
+        // send it:
+        client.send(message);
+        // print what you sent:
+        //localDiv.html('I sent: ' + message.payloadString);
+        console.log('I sent: ' + message.payloadString);
+    }
+    else{console.log("didn't send");
+    }
+}
+var mystring="hihi";
+</script>
+<button type="button" onclick="sendMqttMessage() ">Click Me!</button>
+
+<button type="button" onclick="smmc( mystring) ">test</button>
+
+<h4>slider:0</h4>
+<input type="range" min="1" max="100" value="50" id="id0">
+<h4>slider:1</h4>
+<input type="range" min="1" max="100" value="50" id="id1">
+<h4>slider:2</h4>
+<input type="range" min="1" max="100" value="50" id="id2">
+<p></p>
+<span>Value:</span> <span id="c_data" style="font-weight:bold;color:red"></span>
+
+
+<script>
+var slider_0 = document.getElementById("id0");
+var slider_1 = document.getElementById("id1");
+var slider_2 = document.getElementById("id2");
+var d0,d1,d2 = 0;
+
+var x = document.getElementById("c_data");
+var ts = String(d0)+";"+String(d1)+";"+String(d2);
+
+slider_0.oninput = function() {
+    d0=this.value;
+    //x.innerHTML = this.value;
+    x.innerHTML = String(d0)+";"+String(d1)+";"+String(d2);
+    ts = String(d0)+";"+String(d1)+";"+String(d2);
+    console.log("slider_0:",d1);
+    smmc(ts);
+}
+slider_1.oninput = function() {
+    d1=this.value;
+    //x.innerHTML = this.value;
+    x.innerHTML = String(d0)+";"+String(d1)+";"+String(d2);
+    ts = String(d0)+";"+String(d1)+";"+String(d2);
+    console.log("slider_1:",d1);
+    smmc(ts);
+}
+
+slider_2.oninput = function() {
+    d2=this.value;
+    //x.innerHTML = this.value;
+    x.innerHTML = String(d0)+";"+String(d1)+";"+String(d2);
+    ts = String(d0)+";"+String(d1)+";"+String(d2);
+    console.log("slider_2:",d2);
+    smmc(ts);
+}
+
+
+</script>
+
+
+
+
+    </body>
+
+</html>
