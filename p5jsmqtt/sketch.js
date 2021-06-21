@@ -22,7 +22,7 @@ let client;
 let creds = {
     clientID: 'p5Client',
     userName: 'public',
-    //password: 'public'
+    password: ''
 }
 // topic to subscribe to when you connect:
 let topic = 'notes/test';
@@ -47,7 +47,7 @@ function setup() {
         {
             onSuccess: onConnect,       // callback function for when you connect
             userName: creds.userName,   // username
-            //password: creds.password,   // password
+            password: creds.password,   // password
             useSSL: true                // use SSL
         }
     );
