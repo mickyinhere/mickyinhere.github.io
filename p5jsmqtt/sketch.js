@@ -14,7 +14,7 @@
 // MQTT client details:
 let broker = {
     hostname: '140.113.133.3',
-    port: 8080
+    port: 9001
 };
 // MQTT client:
 let client;
@@ -48,7 +48,7 @@ function setup() {
             onSuccess: onConnect,       // callback function for when you connect
             userName: creds.userName,   // username
             password: creds.password,   // password
-            useSSL: true                // use SSL
+            useSSL: false                // use SSL
         }
     );
     // create the send button:
