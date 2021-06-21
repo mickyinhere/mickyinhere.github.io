@@ -14,7 +14,7 @@
 // MQTT client details:
 let broker = {
     hostname: '140.113.133.3',
-    port: 9001
+    port: 8080
 };
 // MQTT client:
 let client;
@@ -22,7 +22,7 @@ let client;
 let creds = {
     clientID: 'p5Client',
     userName: 'public',
-    //password: 'public'
+    password: 'public'
 }
 // topic to subscribe to when you connect:
 let topic = 'notes/test';
