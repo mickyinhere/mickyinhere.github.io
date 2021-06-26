@@ -1,0 +1,166 @@
+{
+	"metadata": {
+		"type": "App"
+	},
+	"project": {
+		"shadows": true,
+		"shadowType": 1,
+		"vr": false,
+		"physicallyCorrectLights": false,
+		"toneMapping": 0,
+		"toneMappingExposure": 1
+	},
+	"camera": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"object": {
+			"uuid": "A9F6ED42-06A1-4DB2-9C98-81FE3DDA8152",
+			"type": "PerspectiveCamera",
+			"name": "Camera",
+			"layers": 1,
+			"matrix": [0.973666,0,0.227978,0,0.125632,0.834458,-0.53656,0,-0.190238,0.551071,0.812484,0,0.610455,6.543054,5.365505,1],
+			"fov": 50,
+			"zoom": 1,
+			"near": 0.01,
+			"far": 1000,
+			"focus": 10,
+			"aspect": 1.885914,
+			"filmGauge": 35,
+			"filmOffset": 0
+		}
+	},
+	"scene": {
+		"metadata": {
+			"version": 4.5,
+			"type": "Object",
+			"generator": "Object3D.toJSON"
+		},
+		"geometries": [
+			{
+				"uuid": "6898503E-DA01-4C90-8CBE-C4C86E38AC6F",
+				"type": "BoxGeometry",
+				"width": 1,
+				"height": 1,
+				"depth": 1,
+				"widthSegments": 1,
+				"heightSegments": 1,
+				"depthSegments": 1
+			},
+			{
+				"uuid": "3D951977-EEB1-492E-B87F-7EA505C3F309",
+				"type": "IcosahedronGeometry",
+				"radius": 1,
+				"detail": 0
+			}],
+		"materials": [
+			{
+				"uuid": "430A6A85-6A28-4BDF-9710-6B766ED97D1E",
+				"type": "MeshStandardMaterial",
+				"color": 16777215,
+				"roughness": 1,
+				"metalness": 0,
+				"emissive": 0,
+				"envMapIntensity": 1,
+				"refractionRatio": 0.98,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"colorWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680
+			},
+			{
+				"uuid": "A6C30E7F-FC32-4C08-8A42-FB1279DE9926",
+				"type": "MeshStandardMaterial",
+				"color": 16777215,
+				"roughness": 1,
+				"metalness": 0,
+				"emissive": 0,
+				"envMapIntensity": 1,
+				"refractionRatio": 0.98,
+				"depthFunc": 3,
+				"depthTest": true,
+				"depthWrite": true,
+				"colorWrite": true,
+				"stencilWrite": false,
+				"stencilWriteMask": 255,
+				"stencilFunc": 519,
+				"stencilRef": 0,
+				"stencilFuncMask": 255,
+				"stencilFail": 7680,
+				"stencilZFail": 7680,
+				"stencilZPass": 7680
+			}],
+		"object": {
+			"uuid": "DD9027C3-C871-4A75-A99E-09A2642866E5",
+			"type": "Scene",
+			"name": "Scene",
+			"layers": 1,
+			"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+			"children": [
+				{
+					"uuid": "23622E7A-9630-4B2F-A57E-A5478CDB61AE",
+					"type": "Mesh",
+					"name": "Box",
+					"layers": 1,
+					"matrix": [4.294535,0,0,0,0,1,0,0,0,0,1,0,2.11962,0.827089,0.796547,1],
+					"geometry": "6898503E-DA01-4C90-8CBE-C4C86E38AC6F",
+					"material": "430A6A85-6A28-4BDF-9710-6B766ED97D1E"
+				},
+				{
+					"uuid": "93F4787E-C129-4AB9-934C-A28DEEB90DC3",
+					"type": "Mesh",
+					"name": "Icosahedron",
+					"layers": 1,
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,1.733066,0,1],
+					"geometry": "3D951977-EEB1-492E-B87F-7EA505C3F309",
+					"material": "A6C30E7F-FC32-4C08-8A42-FB1279DE9926"
+				},
+				{
+					"uuid": "CA96F02B-F81F-4F14-A415-A7AD46E9661A",
+					"type": "AmbientLight",
+					"name": "AmbientLight",
+					"layers": 1,
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,6.324862,1.960019,1],
+					"color": 2236962,
+					"intensity": 1
+				},
+				{
+					"uuid": "7DA70F09-C52F-42F0-A393-9768F66A06E3",
+					"type": "PointLight",
+					"name": "PointLight",
+					"layers": 1,
+					"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,3.109342,2.227806,3.402977,1],
+					"color": 16777215,
+					"intensity": 1,
+					"distance": 0,
+					"decay": 1,
+					"shadow": {
+						"camera": {
+							"uuid": "19857507-B4BB-463E-B030-A941AE5A1028",
+							"type": "PerspectiveCamera",
+							"layers": 1,
+							"fov": 90,
+							"zoom": 1,
+							"near": 0.5,
+							"far": 500,
+							"focus": 10,
+							"aspect": 1,
+							"filmGauge": 35,
+							"filmOffset": 0
+						}
+					}
+				}]
+		}
+	},
+	"scripts": {}
+}
