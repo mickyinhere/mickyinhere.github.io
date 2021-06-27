@@ -10,8 +10,9 @@ function setup() {
 
 function draw() {
   clear();
-  background(200);
-  rotateX(frameCount * 0.01);
-  rotateY(frameCount * 0.01);
+  //background(200);
+  rotateX(frameCount * 0.001);
+  rotateY(frameCount * 0.001);
+  specularMaterial(250);
   model(octahedron);
 }
