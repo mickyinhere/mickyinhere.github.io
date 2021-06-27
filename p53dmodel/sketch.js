@@ -9,6 +9,8 @@ function setup() {
 }
 
 function draw() {
+  ambientLight(60, 60, 60);
+  pointLight(255, 255, 255, locX, locY, 100);
   clear();
   //background(200);
   rotateX(frameCount * 0.001);
