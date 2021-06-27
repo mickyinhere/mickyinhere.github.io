@@ -22,7 +22,7 @@ function draw() {
   rotateX(PI*0.3);
   rotateZ(frameCount * 0.00101);
   //rotateY(frameCount * 0.00101);
-  specularMaterial(250,250,250,10);
+  specularMaterial(250,250,250,25);
   stroke(255);
   strokeWeight(0.05);
   scale(0.05);
