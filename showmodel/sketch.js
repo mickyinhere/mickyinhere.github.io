@@ -1,7 +1,7 @@
 let octahedron;
 
 function preload() {
-  octahedron = loadModel('https://mickyinhere.github.io/p53dmodel/sdemodel.obj');
+  octahedron = loadModel('https://mickyinhere.github.io/p53dmodel/sdemv3.obj');
 }
 
 function setup() {
