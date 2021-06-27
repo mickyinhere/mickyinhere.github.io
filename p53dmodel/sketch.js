@@ -9,15 +9,14 @@ function setup() {
 }
 
 function draw() {
+  clear();
   let locX = mouseX - height / 2;
   let locY = mouseY - width / 2;
-
   ambientLight(60, 60, 60);
   pointLight(255, 255, 255, locX, locY, 100);
-  clear();
-  //background(200);
-  rotateX(frameCount * 0.001);
-  rotateY(frameCount * 0.001);
-  specularMaterial(250);
+  rotateX(frameCount * 0.01);
+  rotateY(frameCount * 0.01);
+  specularMaterial(250,250,250,155);
+  noStroke();
   model(octahedron);
 }
