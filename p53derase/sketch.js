@@ -6,7 +6,7 @@ function setup() {
 }
 
 function draw() {
-  
+  clear();
   //background(255,170,200);
   var val = slider.value();
   //background(val);
