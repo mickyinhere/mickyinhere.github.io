@@ -1,7 +1,7 @@
 let octahedron;
 
 function preload() {
-  octahedron = loadModel('https://mickyinhere.github.io/p53dmodel/sdemv3.obj');
+  octahedron = loadModel('https://mickyinhere.github.io/p53dmodel/sdemv6.obj');
 }
 
 function setup() {
@@ -22,7 +22,7 @@ function draw() {
   rotateX(PI*0.3);
   rotateZ(frameCount * 0.00101);
   //rotateY(frameCount * 0.00101);
-  specularMaterial(250,250,250,75);
+  specularMaterial(250,250,250,35);
   stroke(255);
   strokeWeight(0.05);
   scale(0.05);
