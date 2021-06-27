@@ -9,6 +9,9 @@ function setup() {
 }
 
 function draw() {
+  let locX = mouseX - height / 2;
+  let locY = mouseY - width / 2;
+
   ambientLight(60, 60, 60);
   pointLight(255, 255, 255, locX, locY, 100);
   clear();
