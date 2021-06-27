@@ -1,7 +1,7 @@
 let octahedron;
 
 function preload() {
-  octahedron = loadModel('3d.obj');
+  octahedron = loadModel('3d_100.obj');
 }
 
 function setup() {
